@@ -1,0 +1,8 @@
+version: '3'
+services:
+  main:
+    build: .
+    volumes:
+      - .:/wd
+    working_dir: /wd
+    command: openssl s_server -cert ./self-signed/build/leaf.pem -key ./self-signed/build/leaf-key.pem -www -port 443
